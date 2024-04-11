@@ -1,0 +1,222 @@
+my Final Code:
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <script>
+        // Create the header with styling
+        const header = document.createElement('h1');
+        header.textContent = 'To-Do List';
+        header.style.textAlign = 'center';
+        header.style.backgroundColor = '#4CAF50';
+        header.style.color = 'white';
+        header.style.padding = '20px 0';
+        document.body.appendChild(header);
+
+        // Create the input field with styling
+        const taskInput = document.createElement('input');
+        taskInput.setAttribute('type', 'text');
+        taskInput.setAttribute('id', 'taskInput');
+        taskInput.setAttribute('placeholder', 'Add a new task...');
+        taskInput.style.width = 'calc(100% - 20px)';
+        taskInput.style.padding = '10px';
+        taskInput.style.margin = '10px';
+        taskInput.style.fontSize = '16px';
+        taskInput.style.border = '1px solid #ccc';
+        taskInput.style.borderRadius = '4px';
+        taskInput.style.boxSizing = 'border-box';
+        taskInput.style.outline = 'none';
+        document.body.appendChild(taskInput);
+
+        // Create the task list container with styling
+        const taskListContainer = document.createElement('div');
+        taskListContainer.setAttribute('id', 'taskListContainer');
+        taskListContainer.style.padding = '10px';
+        taskListContainer.style.border = '1px solid #ccc';
+        taskListContainer.style.borderRadius = '4px';
+        taskListContainer.style.margin = '0 10px';
+        taskListContainer.style.minHeight = '200px';
+        taskListContainer.style.overflowY = 'auto';
+        document.body.appendChild(taskListContainer);
+
+        // Task list array to store tasks
+        let tasks = [];
+
+        // Function to render tasks
+        function renderTasks() {
+            taskListContainer.innerHTML = '';
+
+            tasks.forEach((task, index) => {
+                const li = document.createElement('div');
+                li.textContent = task.name;
+                li.style.padding = '10px';
+                li.style.borderBottom = '1px solid #ccc';
+
+                if (task.completed) {
+                    li.style.textDecoration = 'line-through';
+                    li.style.color = '#aaa';
+                }
+
+                const deleteBtn = document.createElement('span');
+                deleteBtn.textContent = '❌';
+                deleteBtn.style.float = 'right';
+                deleteBtn.style.cursor = 'pointer';
+                deleteBtn.style.marginLeft = '10px';
+                deleteBtn.style.color = '#f44336';
+                deleteBtn.style.fontSize = '20px';
+                deleteBtn.style.lineHeight = '20px';
+                deleteBtn.addEventListener('click', () => {
+                    deleteTask(index);
+                });
+
+                li.appendChild(deleteBtn);
+                taskListContainer.appendChild(li);
+            });
+        }
+
+        // Function to add a new task
+        function addTask(name) {
+            tasks.push({ name, completed: false });
+            renderTasks();
+        }
+
+        // Function to delete a task
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            renderTasks();
+        }
+
+        // Event listener for adding a new task
+        document.getElementById('taskInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter' && e.target.value.trim() !== '') {
+                addTask(e.target.value.trim());
+                e.target.value = '';
+            }
+        });
+
+        // Initial rendering
+        renderTasks();
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <script>
+        // Creating A Heading With green Style 
+        const header = document.createElement('h1');
+        header.textContent = 'My To-do List';
+        header.style.textAlign = 'center';
+        header.style.top = '70%';
+        header.style.backgroundColor = '#4CAF50';
+        header.style.color = 'white';
+        header.style.padding = '20px 0';
+        header.style.position = 'relative';
+        document.body.appendChild(header);
+
+        // Here I am Creating a cart Logo 
+        const cartLogo = document.createElement('img');
+        cartLogo.src = 'https://img.icons8.com/material-rounded/24/ffffff/shopping-cart--v1.png';
+        cartLogo.style.position = 'absolute';
+        cartLogo.style.top = '50%';
+        cartLogo.style.left = '20px';
+        cartLogo.style.transform = 'translateY(-50%)';
+        header.appendChild(cartLogo);
+
+        // Here i am creating a Input field with some Styling 
+        const taskInput = document.createElement('input');
+        taskInput.setAttribute('type', 'text');
+        taskInput.setAttribute('id', 'taskInput');
+        taskInput.setAttribute('placeholder', 'Add Your Elements Here...');
+        taskInput.style.width = 'calc(96% - 50px)';
+        taskInput.style.padding = '10px';
+        taskInput.style.margin = '10px';
+        taskInput.style.fontSize = '20px';
+        taskInput.style.border = '2px solid #4CAF50';
+        taskInput.style.borderRadius = '10px';
+        taskInput.style.boxSizing = 'border-box';
+        taskInput.style.boxShadow="green";
+        taskInput.style.outline = 'none';
+        taskInput.style.marginLeft = '50px';
+        document.body.appendChild(taskInput);
+
+        // Create the task list container with styling
+        const taskListContainer = document.createElement('div');
+        taskListContainer.setAttribute('id', 'taskListContainer');
+        taskListContainer.style.padding = '10px';
+        taskListContainer.style.border = '3px solid #4CAF50';
+        taskListContainer.style.borderRadius = '4px';
+        taskListContainer.style.margin = '0 10px';
+        taskListContainer.style.minHeight = '200px';
+        taskListContainer.style.overflowY = 'auto';
+        document.body.appendChild(taskListContainer);
+
+       
+        let tasks = [];
+
+        
+        function renderTasks() {
+            taskListContainer.innerHTML = '';
+
+            tasks.forEach((task, index) => {
+                const li = document.createElement('div');
+                li.textContent = task.name;
+                li.style.padding = '10px';
+                li.style.borderBottom = '1px solid #ccc';
+
+                if (task.completed) {
+                    li.style.textDecoration = 'line-through';
+                    li.style.color = '#aaa';
+                }
+
+                const deleteBtn = document.createElement('span');
+                deleteBtn.textContent = '❌';
+                deleteBtn.style.float = 'right';
+                deleteBtn.style.cursor = 'pointer';
+                deleteBtn.style.marginLeft = '10px';
+                deleteBtn.style.color = '#f44336';
+                deleteBtn.style.fontSize = '20px';
+                deleteBtn.style.lineHeight = '20px';
+                deleteBtn.addEventListener('click', () => {
+                    deleteTask(index);
+                });
+
+                li.appendChild(deleteBtn);
+                taskListContainer.appendChild(li);
+            });
+        }
+
+       
+        function addTask(name) {
+            tasks.push({ name, completed: false });
+            renderTasks();
+        }
+
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            renderTasks();
+        }
+
+      
+        document.getElementById('taskInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter' && e.target.value.trim() !== '') {
+                addTask(e.target.value.trim());
+                e.target.value = '';
+            }
+        });
+
+       
+        renderTasks();
+    </script>
+</body>
+</html>
